@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/board_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/events_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingEnd="@dimen/card_side_margin"
+            android:paddingStart="@dimen/card_side_margin"
+            android:paddingTop="@dimen/header_margin"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="@integer/grid_columns"
+            tools:context=".presentation.board.BoardActivity"
+            tools:listitem="@layout/list_item_event"/>
+
+    </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

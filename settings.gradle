@@ -1,0 +1,7 @@
+include ':common:views'
+include ':common:resources'
+include ':common:network'
+include ':common:cache'
+include ":libs:usermanager"
+include ':app'
+rootProject.name = "Sicred"

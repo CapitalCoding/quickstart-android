@@ -1,0 +1,13 @@
+apply from: "$rootDir/common-android-library.gradle"
+android{
+    defaultConfig {
+        if(useAppId.toBoolean()) {
+            applicationId 'br.com.dbccompany.resources'
+        }
+    }
+}
+dependencies {
+
+    implementation Libs.material
+    implementation Libs.appcompat
+}
