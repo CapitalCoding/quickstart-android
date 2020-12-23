@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -67,7 +68,9 @@ public class BoardFragment extends Fragment implements OnItemClickListener {
     }
 
     private void successNotification() {
-        Toast.makeText(getContext(), "Sucesso.", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), "Sucesso.", Toast.LENGTH_SHORT).show();
+        Snackbar mySnackbar = Snackbar.make(getView(), "Eventos atualizados", Snackbar.LENGTH_LONG);
+        mySnackbar.show();
     }
 
     @Override
@@ -78,7 +81,6 @@ public class BoardFragment extends Fragment implements OnItemClickListener {
     @Override
     public void onItemClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
         Event event = (Event) adapter.getData().get(position);
-        Toast.makeText(getContext(), "Item:"+event.getTitle()+" id:"+event.getId(), Toast.LENGTH_SHORT).show();
         final View androidRobotView = view.findViewById(R.id.event_item_image);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this.getActivity(), androidRobotView, "robot");
         Intent intent = new Intent(this.getActivity(), EventDetailActivity.class);

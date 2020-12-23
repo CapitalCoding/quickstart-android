@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sicred</string>
     <string name="a11y_event_item_image">Um evento</string>
-    <string name="needs_prefix">Needs</string>
+    <string name="needs_prefix">Valor</string>
     <string name="menu_item_share_event">Compartilhar</string>
     <string name="event_detail_image_content_description">Desc</string>
     <string name="menu_item_back_event">Voltar</string>

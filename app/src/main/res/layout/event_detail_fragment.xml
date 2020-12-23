@@ -11,14 +11,18 @@
         <variable
             name="callback"
             type="br.com.dbccompany.sicred.presentation.event.ui.EventDetailFragment.Callback" />
+        <import type="android.view.View" />
     </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:background="?attr/colorSurface"
         tools:context="br.com.dbccompany.sicred.presentation.event.EventDetailActivity"
-        tools:ignore="MergeRootFrame">
+        tools:ignore="MergeRootFrame"
+        android:visibility="@{viewModel.showProgress ? View.GONE : View.VISIBLE}"
+        >
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -69,7 +73,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/plant_detail_scrollview"
+            android:id="@+id/event_detail_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
@@ -82,7 +86,7 @@
                 android:layout_margin="@dimen/margin_normal">
 
                 <TextView
-                    android:id="@+id/plant_detail_name"
+                    android:id="@+id/event_detail_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
@@ -93,10 +97,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Apple" />
+                    tools:text="Titulo" />
 
                 <TextView
-                    android:id="@+id/plant_watering_header"
+                    android:id="@+id/event_value_header"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
@@ -108,10 +112,10 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_detail_name" />
+                    app:layout_constraintTop_toBottomOf="@id/event_detail_name" />
 
                 <TextView
-                    android:id="@+id/plant_watering"
+                    android:id="@+id/event_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
@@ -119,11 +123,11 @@
                     android:gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_watering_header"
+                    app:layout_constraintTop_toBottomOf="@id/event_value_header"
                     tools:text="@{String.valueOf(viewModel.eventMutableLiveData.price)}" />
 
                 <TextView
-                    android:id="@+id/plant_description"
+                    android:id="@+id/event_description"
                     style="?android:attr/textAppearanceMedium"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -134,9 +138,9 @@
                     android:minHeight="@dimen/event_description_min_height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_watering"
+                    app:layout_constraintTop_toBottomOf="@id/event_price"
                     app:renderHtml="@{viewModel.eventMutableLiveData.description}"
-                    tools:text="Details about the plant" />
+                    tools:text="Detalhes" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -75,4 +75,32 @@ public class EventDetailViewModel extends ViewModel {
     public void setChecked(boolean checked) {
         isChecked = checked;
     }
+
+    public EventRepository getEventRepository() {
+        return eventRepository;
+    }
+
+    public MutableLiveData<Boolean> getShowProgress() {
+        return showProgress;
+    }
+
+    public void setShowProgress(MutableLiveData<Boolean> showProgress) {
+        this.showProgress = showProgress;
+    }
+
+    public MutableLiveData<Boolean> getShowError() {
+        return showError;
+    }
+
+    public void setShowError(MutableLiveData<Boolean> showError) {
+        this.showError = showError;
+    }
+
+    public MutableLiveData<Boolean> getShowContent() {
+        return showContent;
+    }
+
+    public void setShowContent(MutableLiveData<Boolean> showContent) {
+        this.showContent = showContent;
+    }
 }

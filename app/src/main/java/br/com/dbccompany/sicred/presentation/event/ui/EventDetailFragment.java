@@ -56,7 +56,7 @@ public class EventDetailFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(EventDetailViewModel.class);
         eventDetailFragmentBinding = EventDetailFragmentBinding.inflate(inflater, container, false  );
         eventDetailFragmentBinding.setViewModel(mViewModel);
-
+        eventDetailFragmentBinding.setLifecycleOwner(getViewLifecycleOwner());
         Bundle bundle = getArguments();
         if(bundle != null){
             int eventId = Integer.valueOf(bundle.getString("event_id"));
@@ -67,9 +67,7 @@ public class EventDetailFragment extends Fragment {
     }
 
     private void subscribeUi() {
-        eventDetailFragmentBinding.setLifecycleOwner(getViewLifecycleOwner());
         mViewModel.eventMutableLiveData.observe(getViewLifecycleOwner(), event -> {
-            Toast.makeText(getContext(), "Got data;", Toast.LENGTH_SHORT).show();
 //            eventDetailFragmentBinding.notifyPropertyChanged(BR.event);
         });
         eventDetailFragmentBinding.toolbar.setOnMenuItemClickListener(item -> {
