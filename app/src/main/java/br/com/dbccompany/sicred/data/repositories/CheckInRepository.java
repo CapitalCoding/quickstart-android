@@ -25,7 +25,7 @@ public class CheckInRepository {
         this.checkInRemoteDataSource = checkInRemoteDataSource;
     }
 
-    public Single<CheckInResponse> postCheckIn(CheckIn checkIn) {
+    public Call<CheckInResponse> postCheckIn(CheckIn checkIn) {
         return checkInRemoteDataSource.saveCheckIn(checkIn);
 
 //                .enqueue(new Callback<CheckInResponse>() {

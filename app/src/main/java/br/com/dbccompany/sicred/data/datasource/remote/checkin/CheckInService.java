@@ -8,5 +8,5 @@ import retrofit2.http.POST;
 
 public interface CheckInService {
     @POST("checkin/")
-    Single<CheckInResponse> saveCheckIn(@Body CheckIn checkIn);
+    Call<CheckInResponse> saveCheckIn(@Body CheckIn checkIn);
 }

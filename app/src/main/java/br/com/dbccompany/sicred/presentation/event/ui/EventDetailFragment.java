@@ -1,4 +1,4 @@
-githubpackage br.com.dbccompany.sicred.presentation.event.ui;
+package br.com.dbccompany.sicred.presentation.event.ui;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.library.baseAdapters.BR;
@@ -27,6 +27,7 @@ import br.com.dbccompany.sicred.R;
 import br.com.dbccompany.sicred.databinding.EventDetailFragmentBinding;
 import br.com.dbccompany.sicred.domain.model.CheckIn;
 import br.com.dbccompany.sicred.domain.model.Event;
+import br.com.dbccompany.sicred.presentation.event.ui.dialog.CheckInDialogFragment;
 import br.com.dbccompany.sicred.utils.PresentationUtils;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -55,9 +56,7 @@ public class EventDetailFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(EventDetailViewModel.class);
         eventDetailFragmentBinding = EventDetailFragmentBinding.inflate(inflater, container, false  );
         eventDetailFragmentBinding.setViewModel(mViewModel);
-        callback = event -> {
 
-        };
         Bundle bundle = getArguments();
         if(bundle != null){
             int eventId = Integer.valueOf(bundle.getString("event_id"));
@@ -71,7 +70,7 @@ public class EventDetailFragment extends Fragment {
         eventDetailFragmentBinding.setLifecycleOwner(getViewLifecycleOwner());
         mViewModel.eventMutableLiveData.observe(getViewLifecycleOwner(), event -> {
             Toast.makeText(getContext(), "Got data;", Toast.LENGTH_SHORT).show();
-            eventDetailFragmentBinding.notifyPropertyChanged(BR.event);
+//            eventDetailFragmentBinding.notifyPropertyChanged(BR.event);
         });
         eventDetailFragmentBinding.toolbar.setOnMenuItemClickListener(item -> {
             Log.d(TAG, "subscribeUi: "+item.getItemId());
@@ -86,6 +85,14 @@ public class EventDetailFragment extends Fragment {
             }
             return false;
         });
+
+        eventDetailFragmentBinding.fab.setOnClickListener(v -> {
+            CheckInDialogFragment checkInDialogFragment = new CheckInDialogFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("event_id", mViewModel.eventMutableLiveData.getValue().getId());
+            checkInDialogFragment.setArguments(bundle);
+            checkInDialogFragment.show(getActivity().getSupportFragmentManager(), "checkin_dialog");
+        });
     }
 
     @Override
@@ -98,7 +105,6 @@ public class EventDetailFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Log.d(TAG, "onOptionsItemSelected: "+item.getItemId());
-
         return super.onOptionsItemSelected(item);
     }
 

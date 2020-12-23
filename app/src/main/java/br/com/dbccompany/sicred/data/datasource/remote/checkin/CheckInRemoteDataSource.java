@@ -14,7 +14,7 @@ public class CheckInRemoteDataSource {
         this.checkInService = checkInService;
     }
 
-    public Single<CheckInResponse> saveCheckIn(CheckIn checkIn){
+    public Call<CheckInResponse> saveCheckIn(CheckIn checkIn){
         return checkInService.saveCheckIn(checkIn);
     }
 }

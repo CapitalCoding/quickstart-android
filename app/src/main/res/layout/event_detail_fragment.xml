@@ -148,7 +148,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
-            android:onClick="@{() -> callback.checkIn(viewModel.eventMutableLiveData)}"
             android:tint="@android:color/white"
             app:shapeAppearance="@style/ShapeAppearance.Sicred.FAB"
             app:isGone="@{viewModel.isChecked}"

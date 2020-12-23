@@ -29,4 +29,14 @@ public class CheckIn {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+    public CheckIn(String eventId, String name, String email) {
+        this.eventId = eventId;
+        this.name = name;
+        this.email = email;
+    }
+
+    public CheckIn() {
+    }
 }

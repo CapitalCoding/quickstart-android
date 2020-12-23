@@ -5,4 +5,11 @@
     <string name="menu_item_share_event">Compartilhar</string>
     <string name="event_detail_image_content_description">Desc</string>
     <string name="menu_item_back_event">Voltar</string>
+    <string name="checkin_btn">Realizar CheckIn</string>
+    <string name="dialog_checkin_btn">CHECKIN</string>
+    <string name="dialog_email_hint">Email</string>
+    <string name="dialog_name_hint">Nome</string>
+    <string name="dialog_checkin_title">Preencha seu nome e email</string>
+    <string name="dialog_checkin_success">Sucesso</string>
+    <string name="dialog_checkin_error">Houve um erro.</string>
 </resources>
