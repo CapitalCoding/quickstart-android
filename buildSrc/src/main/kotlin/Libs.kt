@@ -230,6 +230,7 @@ object Libs {
      */
     const val junit: String = "junit:junit:" + Versions.junit
 
+    const val androidx_test : String = "androidx.test.ext:junit:"+ Versions.androidx_test
     /**
      * http://mockk.io
      */

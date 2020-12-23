@@ -10,4 +10,7 @@ dependencies {
 
     implementation Libs.material
     implementation Libs.appcompat
+
+    testImplementation Libs.mockk
+    testImplementation Libs.junit
 }

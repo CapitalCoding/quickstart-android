@@ -16,7 +16,6 @@ android {
         targetSdkVersion DefaultConfig.targetSdk
         versionCode 1
         versionName "1.0"
-//        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,7 +38,6 @@ android {
 dependencies {
 
 
-//    implementation 'com.android.support:multidex:1.0.3'
     implementation project(Modules.network)
     implementation project(Modules.resources)
     implementation project(Modules.views)
@@ -51,6 +49,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
     kapt Libs.hilt_android_compiler
     implementation Libs.hilt_android_lifecycle
     kapt Libs.hilt_android_lifecycle_compiler
@@ -74,5 +73,6 @@ dependencies {
 
     testImplementation Libs.mockk
     testImplementation Libs.junit
+    androidTestImplementation Libs.androidx_test
 
 }

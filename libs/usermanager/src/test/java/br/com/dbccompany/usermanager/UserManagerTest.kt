@@ -1,12 +1,9 @@
 package br.com.dbccompany.usermanager
 
-import com.sanogueralorenzo.cache.Cache
+import br.com.dbccompany.cache.Cache
 import br.com.dbccompany.usermanager.UserManager.Companion.NAME
 import br.com.dbccompany.usermanager.UserManager.Companion.NEW_USER
-import io.mockk.every
-import io.mockk.mockk
-import io.mockk.runs
-import io.mockk.verify
+import io.mockk.*
 import org.junit.Before
 import org.junit.Test
 

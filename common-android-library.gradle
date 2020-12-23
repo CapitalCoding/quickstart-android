@@ -26,5 +26,7 @@ android {
 
 dependencies {
     implementation Libs.kotlin_stdlib_jdk7
-
+    testImplementation Libs.mockk
+    testImplementation Libs.junit
+    androidTestImplementation Libs.androidx_test
 }

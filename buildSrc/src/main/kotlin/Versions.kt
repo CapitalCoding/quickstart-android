@@ -74,6 +74,8 @@ object Versions {
 
     const val junit: String = "4.13"
 
+    const val androidx_test: String  = "1.1.1"
+
     const val mockk: String = "1.10.0"
 
     const val mvrx: String = "2.0.0-alpha2"
