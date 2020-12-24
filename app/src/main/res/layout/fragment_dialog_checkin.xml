@@ -137,7 +137,7 @@
                 android:layout_width="128dp"
                 android:layout_height="96dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/ic_check_success"
+                app:srcCompat="@drawable/ic_check_success"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -172,7 +172,7 @@
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/ic_check_fail"
+                app:srcCompat="@drawable/ic_check_fail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
