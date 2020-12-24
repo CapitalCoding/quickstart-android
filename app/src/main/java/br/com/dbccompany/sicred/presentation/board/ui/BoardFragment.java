@@ -82,7 +82,10 @@ public class BoardFragment extends Fragment implements OnItemClickListener {
     public void onItemClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
         Event event = (Event) adapter.getData().get(position);
         final View androidRobotView = view.findViewById(R.id.event_item_image);
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this.getActivity(), androidRobotView, "robot");
+        ActivityOptions options = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            options = ActivityOptions.makeSceneTransitionAnimation(this.getActivity(), androidRobotView, "robot");
+        }
         Intent intent = new Intent(this.getActivity(), EventDetailActivity.class);
         intent.putExtra("event_id", event.getId());
         startActivity(intent, options.toBundle());
