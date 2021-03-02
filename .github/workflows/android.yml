@@ -32,17 +32,20 @@ jobs:
       - name: Run Lint
         run: ./gradlew lintDebug
         
-  compare:
+  test2:
     runs-on: ubuntu-latest
-    
-    steps:
-      - uses: microsoft/android-app-size-diff@v0.32
-      - name: Run APK size comparision
-        with:
-          baseAppPath: test/assets/test.apk
-          targetAppPath: test/assets/test.apk
-          summaryOutputPath: summary.md
-            echo test, and deploy your project.	
+    steps: AndroidTestReportAction
+parse test result for android test report
+
+      - uses: actions/checkout@v2
+
+      - name: Unit tests
+        run: ./gradlew test # use can use another command to run juni test like: ./gradlew testDebugUnitTest
+        continue-on-error: true # IMPORTANT: allow pipeline to continue to Android Test Report step
+
+      - name: Make Unit test report
+        uses: doanpt/AndroidTestReportAction@v1.0
+        if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
   tests:
     runs-on: ubuntu-latest
 
