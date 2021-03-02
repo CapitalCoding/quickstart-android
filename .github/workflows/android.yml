@@ -31,7 +31,17 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Run Lint
         run: ./gradlew lintDebug
-
+  compare:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: microsoft/android-app-size-diff@v0.32
+      - name: Run APK size comparision
+    with:
+     baseAppPath: test/assets/test.apk
+     targetAppPath: test/assets/test.apk
+     summaryOutputPath: summary.md
+          echo test, and deploy your project.	
   tests:
     runs-on: ubuntu-latest
 
