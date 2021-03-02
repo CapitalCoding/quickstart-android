@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="br.com.flasco.leanworks.SicredApplication"
+        android:name="br.com.diogomoreno.events.EventsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,10 +14,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="br.com.flasco.leanworks.br.com.diogomoreno.leanworks.presentation.event.EventDetailActivity"
-            android:parentActivityName="br.com.flasco.leanworks.br.com.diogomoreno.leanworks.presentation.board.BoardActivity" />
+            android:name="br.com.diogomoreno.events.presentation.event.EventDetailActivity"
+            android:parentActivityName="br.com.diogomoreno.events.presentation.board.BoardActivity" />
         <activity
-            android:name="br.com.flasco.leanworks.br.com.diogomoreno.leanworks.presentation.SplashActivity"
+            android:name="br.com.diogomoreno.events.presentation.SplashActivity"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.com.flasco.leanworks.br.com.diogomoreno.leanworks.presentation.MainActivity" />
-        <activity android:name="br.com.flasco.leanworks.br.com.diogomoreno.leanworks.presentation.board.BoardActivity"  />
+        <activity android:name="br.com.diogomoreno.events.presentation.MainActivity" />
+        <activity android:name="br.com.diogomoreno.events.presentation.board.BoardActivity"  />
     </application>
 
 </manifest>

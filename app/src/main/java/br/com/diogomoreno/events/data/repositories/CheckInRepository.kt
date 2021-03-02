@@ -1,23 +1,14 @@
-package br.com.diogomoreno.events.data.repositories;
+package br.com.diogomoreno.events.data.repositories
 
-import javax.inject.Inject;
+import br.com.diogomoreno.events.data.datasource.remote.checkin.CheckInRemoteDataSource
+import br.com.diogomoreno.events.data.datasource.remote.checkin.CheckInResponse
+import br.com.diogomoreno.events.domain.model.CheckIn
+import retrofit2.Call
+import javax.inject.Inject
 
-import br.com.diogomoreno.events.data.datasource.remote.checkin.CheckInRemoteDataSource;
-import br.com.diogomoreno.events.data.datasource.remote.checkin.CheckInResponse;
-import br.com.diogomoreno.events.domain.model.CheckIn;
-import retrofit2.Call;
-
-public class CheckInRepository {
-
-    private CheckInRemoteDataSource checkInRemoteDataSource;
-
-    @Inject
-    public CheckInRepository(CheckInRemoteDataSource checkInRemoteDataSource) {
-        this.checkInRemoteDataSource = checkInRemoteDataSource;
-    }
-
-    public Call<CheckInResponse> postCheckIn(CheckIn checkIn) {
-        return checkInRemoteDataSource.saveCheckIn(checkIn);
+class CheckInRepository @Inject constructor(private val checkInRemoteDataSource: CheckInRemoteDataSource) {
+    fun postCheckIn(checkIn: CheckIn?): Call<CheckInResponse?>? {
+        return checkInRemoteDataSource.saveCheckIn(checkIn)
 
 //                .enqueue(new Callback<CheckInResponse>() {
 //            @Override
@@ -34,7 +25,6 @@ public class CheckInRepository {
 //                listEventMutableLiveData.setValue(HttpResponse.Failure(-1, null, t.getMessage()));
 //            }
 //        });
-    }
+    } //search load etc...
 
-    //search load etc...
 }

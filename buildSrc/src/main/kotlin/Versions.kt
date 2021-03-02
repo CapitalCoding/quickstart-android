@@ -82,7 +82,7 @@ object Versions {
 
     const val arouter: String = "1.5.1"
 
-    const val base_quick_view_adapter: String = "3.0.0"
+    const val base_quick_view_adapter: String = "3.0.4"
 
     /**
      * Current version: "6.6.1"
