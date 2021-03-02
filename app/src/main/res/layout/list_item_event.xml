@@ -24,7 +24,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="event"
-            type="br.com.flasco.leanworks.domain.model.Event"/>
+            type="br.com.diogomoreno.events.domain.model.Event"/>
     </data>
 
     <androidx.cardview.widget.CardView

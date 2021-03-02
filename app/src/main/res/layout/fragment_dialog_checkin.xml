@@ -19,7 +19,7 @@
         
         <variable
             name="viewModel"
-            type="br.com.flasco.leanworks.presentation.event.ui.dialog.CheckInViewModel" />
+            type="br.com.diogomoreno.events.presentation.event.ui.dialog.CheckInViewModel" />
 
         <import type="android.view.View" />
 
