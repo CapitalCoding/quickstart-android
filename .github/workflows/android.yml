@@ -31,6 +31,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Run Lint
         run: ./gradlew lintDebug
+        
   compare:
     runs-on: ubuntu-latest
     
