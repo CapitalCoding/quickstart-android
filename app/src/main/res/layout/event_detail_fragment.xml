@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="br.com.dbccompany.sicred.domain.model.Event"/>
+        <import type="br.com.flasco.leanworks.domain.model.Event"/>
         <variable
             name="viewModel"
-            type="br.com.dbccompany.sicred.presentation.event.ui.EventDetailViewModel" />
+            type="br.com.flasco.leanworks.presentation.event.ui.EventDetailViewModel" />
         <variable
             name="callback"
-            type="br.com.dbccompany.sicred.presentation.event.ui.EventDetailFragment.Callback" />
+            type="br.com.flasco.leanworks.presentation.event.ui.EventDetailFragment.Callback" />
         <import type="android.view.View" />
     </data>
 
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:background="?attr/colorSurface"
-        tools:context="br.com.dbccompany.sicred.presentation.event.EventDetailActivity"
+        tools:context="br.com.flasco.leanworks.presentation.event.EventDetailActivity"
         tools:ignore="MergeRootFrame"
         android:visibility="@{viewModel.showProgress ? View.GONE : View.VISIBLE}"
         >

@@ -1,8 +1,10 @@
 apply from: "$rootDir/common-android-library.gradle"
 apply plugin: 'kotlin-kapt'
 android{
-    dataBinding {
-        enabled = true
+    buildFeatures{
+        dataBinding {
+            enabled = true
+        }
     }
 }
 dependencies {

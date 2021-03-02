@@ -1,3 +1,3 @@
 object App {
-    val sicred = "br.com.dbcompany.sicred"
+    val name = "br.com.flasco.leanworks"
 }

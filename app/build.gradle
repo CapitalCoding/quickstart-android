@@ -7,8 +7,10 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-    dataBinding {
-        enabled = true
+    buildFeatures{
+        dataBinding {
+            enabled = true
+        }
     }
     defaultConfig {
         applicationId "br.com.dbccompany.sicred"
@@ -47,6 +49,7 @@ dependencies {
     implementation project(Modules.network)
     implementation project(Modules.resources)
     implementation project(Modules.views)
+//    implementation project(Modules.login)
 
     implementation Libs.base_quick_view_adapter
 

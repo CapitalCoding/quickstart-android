@@ -1,13 +1,14 @@
 object Modules {
-    val app = ":app"
+    const val app = ":app"
 
-    val sicred = ":sicred"
+    const val sicred = ":sicred"
 
-    val resources = ":common:resources"
-    val cache = ":common:cache"
-    val network = ":common:network"
-    val views = ":common:views"
+    const val resources = ":common:resources"
+    const val cache = ":common:cache"
+    const val network = ":common:network"
+    const val views = ":common:views"
+    const val login = ":common:login"
 
-    val usermanager = ":libs:usermanager"
+    const val usermanager = ":libs:usermanager"
 
 }

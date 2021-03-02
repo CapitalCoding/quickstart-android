@@ -2,6 +2,7 @@ include ':common:views'
 include ':common:resources'
 include ':common:network'
 include ':common:cache'
+include ':common:login'
 include ":libs:usermanager"
 include ':app'
-rootProject.name = "Sicred"
+rootProject.name = "BaseLib"

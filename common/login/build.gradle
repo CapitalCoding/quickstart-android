@@ -1,0 +1,17 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Facebook sdk
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-auth:10.2.0'
+    implementation 'com.google.firebase:firebase-auth:10.2.0'
+    // GSON lib
+    implementation 'com.google.code.gson:gson:2.7'
+}
